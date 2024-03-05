@@ -9,9 +9,8 @@ export default {
       
       'lg': {'max': '1023px'},
 
-      'md': {'max': '767px'}, //tablets
 
-      'sm': {'max': '639px'},
+      'sm': {'max': '1000px'},
     },
     extend: {
       colors:{

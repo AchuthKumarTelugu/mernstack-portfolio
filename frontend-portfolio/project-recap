@@ -13,3 +13,8 @@ i made section title component for getting pre-styled titles , in which i have t
 for animation images i used lottieFiles and to use any animation --> save it collections and there copy script tag and animaiton link
 
 for responsive design,go to customising screens in tailwind to scroll down to max-width breakpoints and copy screen object to your tailwind.config
+kept only small and lg ,increased small to 1000px ,sm:for mobiles,md:for tablets
+adjusted data according to screen size
+
+experiences component:
+made fake data stored in experiences.js and made component Experirences.jsx
