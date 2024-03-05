@@ -1,0 +1,15 @@
+front-end:
+used react-router-dom from home page routing
+made header component
+in pages : home contains index.js(which is primary file for it),remaining files indicates ,those are present in home page
+made primary,secondary,tertiary colors in tailwind.config.js-->extend-->colors:{
+    primary:....
+}
+made intro page inside home
+gave padding to y-axis for div containing intro so that we can squeeze to middle
+
+i made about component for about me section
+i made section title component for getting pre-styled titles , in which i have to insert title as prop
+for animation images i used lottieFiles and to use any animation --> save it collections and there copy script tag and animaiton link
+
+for responsive design,go to customising screens in tailwind to scroll down to max-width breakpoints and copy screen object to your tailwind.config
