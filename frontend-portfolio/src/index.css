@@ -2,6 +2,20 @@
 *{
     font-family: "Montserrat", sans-serif;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background:#081932;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #3be8c6; 
+    border-radius: 10px;
+  }
+ 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

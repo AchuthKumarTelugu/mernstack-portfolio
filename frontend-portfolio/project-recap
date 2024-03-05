@@ -18,3 +18,6 @@ adjusted data according to screen size
 
 experiences component:
 made fake data stored in experiences.js and made component Experirences.jsx
+to get shading effect on background ,first i gave bg some color and reduced its opacity and kept left border to it
+to generate data based on period click and i created selectedIndex useState and whenever i clicked period div ,i set that index to its current index and show data related to it
+made it responsive

@@ -8,7 +8,7 @@ function Experiences() {
         <div >
             <SectionTitle title={"Experiences"} />
             <div className='flex gap-20 sm:gap-10 sm:flex-col'> 
-                <div className='flex flex-col sm:flex-row gap-10 py-10 border-l-2 border-[#135e4c82] '>
+                <div className='flex flex-col sm:flex-row sm:overflow-auto gap-10 py-10 border-l-2 border-[#135e4c82] '>
                     {
                       experiences.map((value,index)=>(
                         <div 
