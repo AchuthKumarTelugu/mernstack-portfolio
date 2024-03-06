@@ -13,13 +13,13 @@ function Contact() {
     return (
         <div>
             <SectionTitle title={"Say Hello"} />
-            <div className="flex   py-10">
-                <div>
-                    <pre className='text-tertiary'>
+            <div className="flex items-center sm:flex-col sm:gap-16 py-10 ">
+                <div className='w-1/2  pl-16 sm:pl-0 sm:flex sm:justify-center ' >
+                    <pre className='text-tertiary '>
                         {JSON.stringify(user, null, 2)}
                     </pre>
-                </div>
-                <div className='text-white'>
+                </div >
+                <div className='text-white w-1/2 sm:w-full '>
                   <img src={contactImage} alt="" />
                 </div>
 

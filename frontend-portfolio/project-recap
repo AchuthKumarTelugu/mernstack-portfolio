@@ -28,3 +28,11 @@ raw data in projects file in resources and made an exact replica of experiences 
 made contact component:
 to display the json object as it in web ,we have to use JSON.stringify(object,null,2) ,null-no transformation function is called,2-indicates 2 spaces for indentation ,enclosed in pre tag which preserves spaces and line breaks
 imported image as import contactImage from 'path'  and passed it to src of img tag
+to download animation images use unDraw website
+
+completed footer :
+where i made div as line and decreased opacity of text below it
+
+making side bar which contains all websites link only for web view:
+for icons we use remix icons ,because only by icons we can paste icons ,for cdn search for their github link
+made icons list and gave them position fixed at left-0 bottom-0 and padding -left
