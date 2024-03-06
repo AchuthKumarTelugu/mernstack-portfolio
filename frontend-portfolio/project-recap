@@ -21,3 +21,10 @@ made fake data stored in experiences.js and made component Experirences.jsx
 to get shading effect on background ,first i gave bg some color and reduced its opacity and kept left border to it
 to generate data based on period click and i created selectedIndex useState and whenever i clicked period div ,i set that index to its current index and show data related to it
 made it responsive
+
+project component:
+raw data in projects file in resources and made an exact replica of experiences component for similarity and generated raw data with the help of chatgpt
+
+made contact component:
+to display the json object as it in web ,we have to use JSON.stringify(object,null,2) ,null-no transformation function is called,2-indicates 2 spaces for indentation ,enclosed in pre tag which preserves spaces and line breaks
+imported image as import contactImage from 'path'  and passed it to src of img tag

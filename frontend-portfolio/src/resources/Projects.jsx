@@ -1,19 +1,19 @@
-const Projects =[
+const projects =[
     {
       "title": "Go Food",
-      "description": "Discover a sophisticated food shopping experience with our Full Stack MERN website. Powered by React, Express.js, Node.js, and MongoDB for secure login authentication and efficient CRUD operations. Enjoy a responsive design for an optimal shopping journey.",
+      "description": "Discover a sophisticated food shopping experience with our Full Stack MERN (MongoDB, Express.js, React.js, Node.js) website. Powered by React for a dynamic user interface and Express.js and Node.js for seamless back-end operations, this platform offers secure login authentication and efficient CRUD operations on MongoDB. Enjoy a responsive design for an optimal shopping journey, making online food shopping easy, intuitive, and secure.",
       "subtitle": "React, MongoDB, Express, Node.js",
-      "image": "https://i.ibb.co/gdd0cq8/furnifurniture.png"
+      "image": "https://i.ibb.co/RyPv4LH/go-food.png"
     },
     {
       "title": "Cinema Elk",
-      "description": "Made with Firebase and React, this project uses a movie API for reviews and ratings. Firebase handles password authentication and database storage. TMDB website provides movie data.",
+      "description": "This project is made by firebase and react and movie api to give make reviews and rating to each movie and firebase is used for password authentication and database for storing information ,react is front end library,for movie api ,tmdb website is used",
       "subtitle": "React, Firebase",
       "image": "https://i.ibb.co/1mKNkV8/cinema-elk.png"
     },
     {
       "title": "Ticket Box",
-      "description": "Movie booking application similar to BookMyShow, featuring a React-based frontend and related APIs.",
+      "description": "This project involves movie booking application similar bookmyshow to show case different movies and seat booking ui with frontend using react and other related api",
       "subtitle": "React",
       "image": "https://i.ibb.co/0cZ45Md/ticket-box.png"
     },
@@ -36,4 +36,4 @@ const Projects =[
       "image": "https://i.ibb.co/SdBzZwK/med-start.png"
     }
   ]
-export default Projects;
+export default projects;
