@@ -5,12 +5,7 @@ const projects =[
       "subtitle": "React, MongoDB, Express, Node.js",
       "image": "https://i.ibb.co/RyPv4LH/go-food.png"
     },
-    {
-      "title": "Cinema Elk",
-      "description": "This project is made by firebase and react and movie api to give make reviews and rating to each movie and firebase is used for password authentication and database for storing information ,react is front end library,for movie api ,tmdb website is used",
-      "subtitle": "React, Firebase",
-      "image": "https://i.ibb.co/1mKNkV8/cinema-elk.png"
-    },
+   
     {
       "title": "Ticket Box",
       "description": "This project involves movie booking application similar bookmyshow to show case different movies and seat booking ui with frontend using react and other related api",

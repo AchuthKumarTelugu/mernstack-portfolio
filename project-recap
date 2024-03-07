@@ -55,3 +55,5 @@ part-1 static website completed
 part-2 dynamic website started:
 setup for express and nodejs completed 
 connected to db using mongoose and connection is made in config->dbConfig
+
+to make website dynamic ,we should retreive data from database,to do that we created different modals for different components in home page
