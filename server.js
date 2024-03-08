@@ -4,6 +4,7 @@ const cors=require('cors')
 app.use(cors())
 require('dotenv').config()
 const db=require('./config/dbConfig')
+app.use('/api/portfolio',require('./routes/portfolioRoute'))
 app.get('/',(req,res)=>{
     res.json({msg:'hello world'})
 })

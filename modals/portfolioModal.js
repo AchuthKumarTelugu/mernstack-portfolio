@@ -77,7 +77,7 @@ const projectsSchema = new Schema({
         type: String,
         required: true
     },
-    teckStack:{
+    techStack:{
         type:Array,
         required:true
     },
@@ -114,5 +114,5 @@ module.exports={
     About:model('about',aboutSchema),
     Experience:model('experience',experiencesSchema),
     Projects:model('projects',projectsSchema),
-    Contact:model('contact',contactSchema)
+    Contact:model('contacts',contactSchema)
 }
