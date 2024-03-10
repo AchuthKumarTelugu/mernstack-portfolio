@@ -1,14 +1,18 @@
 import React from 'react'
 import SectionTitle from '../../components/SectionTitle'
 import contactImage from '../../assets/contactus-image.png'
+import { useSelector } from 'react-redux'
 function Contact() {
+    const {portfolioData}=useSelector(state=>state.root)
+    const {contact}=portfolioData
+    const {name,email,mobile,age,gender,address}=contact;
     const user = {
-        "name": "Achuth kumar .Telugu",
-        "age": "21",
-        "gender": "Male",
-        "email": "achuthkumar.telugu123@gmail.com",
-        "mobile": "6301245622",
-        "address": "Hyderabad, Telangana"
+        "name": name,
+        "age": age,
+        "gender": gender,
+        "email": email,
+        "mobile": mobile,
+        "address": address
     }
     return (
         <div>

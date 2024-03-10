@@ -72,3 +72,5 @@ created redux file ,created slice using createSlice and its slice.actions contai
 const dispatch=useDispatch() to dispatch actions
 useSelector(state=>state.root) to acess state
 
+after retreiving data from backend , inserting that data into modules ,making the data dynamic,logic for loader is before api calling we use showLoading action-creators and after calling use HideLoading
+
