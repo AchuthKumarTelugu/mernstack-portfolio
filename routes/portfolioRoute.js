@@ -4,16 +4,16 @@ const { Intros, About, Experience, Projects, Contact } = require('../modals/port
 Router.get('/get-portfolio-data', async (req, res) => {
     try {
         const intros = await Intros.find()
-        const about = await About.find()
-        const experience = await Experience.find()
+        const abouts = await About.find()
+        const experiences = await Experience.find()
         const projects = await Projects.find()
         const contact = await Contact.find()
         res.status(200).send({
             intros: intros[0],
-            about: about[0],
-            experience: experience,
             projects: projects,
-            contact: contact[0]
+            contact: contact[0],
+            abouts: abouts[0],
+            experiences: experiences,
         })
     } catch (error) {
         console.log(error)

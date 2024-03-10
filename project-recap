@@ -61,3 +61,14 @@ to make website dynamic ,we should retreive data from database,to do that we cre
 inserting all data into modals of db and code is in staticData.js and made all static data,uploaded data into mongodb after formatted them in json format by formatter online
 
 created get router form /api/portfolio and provided get request to get all portfolio data
+
+i found a bug in mongodb , it by default stores collection name in plural form ,that means if want to name collection as rule ,mongodb stores it as rules and make it lower case
+
+install use cors on backend ,so that frontend and backend can communicate with each other,install axios,redux,react-redux ,redux-toolkit on frontend for data managment,instead of cors ,we can mention proxy:backend-server url in package.json of frontend,the advantage of proxy is in any request you dont need to write localhost:portno,we can change one place in future,so i prefer proxy over cors
+
+fetched data from frontend using useEffect and axios
+
+created redux file ,created slice using createSlice and its slice.actions contains all the reducers(actions)
+const dispatch=useDispatch() to dispatch actions
+useSelector(state=>state.root) to acess state
+

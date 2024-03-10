@@ -111,8 +111,8 @@ const contactSchema=new Schema ({
 })
 module.exports={
     Intros:model('intros',introSchema),
-    About:model('about',aboutSchema),
-    Experience:model('experience',experiencesSchema),
+    About:model('abouts',aboutSchema),
+    Experience:model('experiences',experiencesSchema),
     Projects:model('projects',projectsSchema),
     Contact:model('contacts',contactSchema)
 }
