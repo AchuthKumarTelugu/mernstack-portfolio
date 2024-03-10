@@ -74,3 +74,5 @@ useSelector(state=>state.root) to acess state
 
 after retreiving data from backend , inserting that data into modules ,making the data dynamic,logic for loader is before api calling we use showLoading action-creators and after calling use HideLoading
 
+to build admin panel,we will be using antdesing (antd), ***toast message are line notification small bars,to install antd -> npm i antd
+
