@@ -76,5 +76,13 @@ after retreiving data from backend , inserting that data into modules ,making th
 
 to build admin panel,we will be using antdesing (antd), ***toast message are line notification small bars,to install antd -> npm i antd,used tabs to switch different tabs like adminIntro,adminExperiences,
 
- made admin intro with forms component from antdesign ,to add form element use Form.item inside insert input element,to get label for it use label property for Form.item along with name for it,layout for Form for label and input vertically,onFinish for Form is called whenever form is submitted,intialValues of form gives its intial values derived from
+ made admin intro with forms component from antdesign ,to add form element use Form.item inside insert input element,to get label for it use label property for Form.item along with name for it,layout for Form for label and input vertically,onFinish for Form is called whenever form is submitted,intialValues of form gives its intial values derived from 
 
+ updated data and new:true indicates returns the new document,upsert:true indicates if there is no document and creates new one,if $set is mentioned,it only change specified field,or else if you specify a body,it replaces it with old body and created a request at backend which updates intro and show us updated successfully message
+ my backend server cant read my req.body ,it cant read my json,so i used app.use(express.json())
+after data is updated,we will use message from antd to display response message
+
+similarly done the same thing for about
+
+designing experiences tab by retireving data and creating modal using <Modal/>
+Modal-> visible=true : shows modal,title=titleData :gives title 
