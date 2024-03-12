@@ -85,4 +85,5 @@ after data is updated,we will use message from antd to display response message
 similarly done the same thing for about
 
 designing experiences tab by retireving data and creating modal using <Modal/>
-Modal-> visible=true : shows modal,title=titleData :gives title 
+Modal-> visible=true : shows modal,title=titleData :gives title,footer={null} removes bydefault ok,cancel buttons,made the logic so that on clicking edit or add it shows popup and on clicking cancel it will close ,based on selectedItemForEdit data will be edited or added
+made add request(post) for adding data in mongodb using new Experience(data) and exp.save() and send success message 

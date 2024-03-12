@@ -42,4 +42,19 @@ Router.post("/update-abouts",async(req,res)=>{
   }
 console.log('abouts:req.body',req.body);
 })
+//add new exprience
+Router.post('/add-experiences',async(req,res)=>{
+   try{
+       const experience=new Experience(req.body)
+       await experience.save()
+       res.status(200).send({
+        success:true,
+        data:experience,
+        message:"Experience added succesfully!"
+       })
+   }catch(error) {
+    console.log(error)
+    res.status(500).send({success:false,message:error.message})
+   }
+})
 module.exports = Router;
