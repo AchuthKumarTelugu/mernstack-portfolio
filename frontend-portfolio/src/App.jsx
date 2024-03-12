@@ -7,6 +7,7 @@ import Loader from './pages/Home/Loader'
 import axios from 'axios'
 import {useDispatch, useSelector} from 'react-redux'
 import { HideLoading, ShowLoading, setPortfolioData } from './redux/rootSlice'
+import Admin from './admin'
 function App() {
   const {loading,portfolioData}=useSelector(state=>state.root)
   const dispatch=useDispatch()
@@ -33,6 +34,7 @@ function App() {
       {loading ? <Loader /> : null}
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/admin' element={(<Admin/>)} />
       </Routes>
     </div>
   )

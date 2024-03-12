@@ -74,5 +74,7 @@ useSelector(state=>state.root) to acess state
 
 after retreiving data from backend , inserting that data into modules ,making the data dynamic,logic for loader is before api calling we use showLoading action-creators and after calling use HideLoading
 
-to build admin panel,we will be using antdesing (antd), ***toast message are line notification small bars,to install antd -> npm i antd
+to build admin panel,we will be using antdesing (antd), ***toast message are line notification small bars,to install antd -> npm i antd,used tabs to switch different tabs like adminIntro,adminExperiences,
+
+ made admin intro with forms component from antdesign ,to add form element use Form.item inside insert input element,to get label for it use label property for Form.item along with name for it,layout for Form for label and input vertically,onFinish for Form is called whenever form is submitted,intialValues of form gives its intial values derived from
 

@@ -75,6 +75,22 @@
     opacity: 1;
   }
 }
+input, textarea {
+  border:1px solid gray;
+  outline:none;
+  height:2.5rem;
+  width:100%;
+ padding-left: 1rem !important;
+ font-size: 1.2rem !important;
+}
+input:focus,textarea:focus{
+  border:2px solid rgb(63, 63, 63);
+}
+textarea{
+ min-height:4.5rem;
+ padding:0.5rem !important;
+ padding-left:1rem !important;
+}
 
 @tailwind base;
 @tailwind components;
