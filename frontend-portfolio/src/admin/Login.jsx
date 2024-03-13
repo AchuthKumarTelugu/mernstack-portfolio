@@ -1,10 +1,26 @@
-import { Form, Input } from 'antd'
+import { Form, Input, message } from 'antd'
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import React from 'react'
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 function Login() {
-    const onFinish = (values) => {
-       console.log('entered data',values)
+    const navigate = useNavigate()
+
+    const onFinish = async (values) => {
+        console.log('entered onFinsih', values)
+        const response = await axios.post('http://localhost:3000/api/portfolio/login', values)
+        console.log('send request', response)
+        const data = response.data
+        console.log('data', data)
+        if (data.success) {
+            message.success(data.message)
+            localStorage.setItem('token',data.token)
+            navigate('/admin')
+        } else {
+            message.error(data.message)
+        }
+
+
     }
     const [passwordVisible, setPasswordVisible] = React.useState(false);
     return (
@@ -25,7 +41,7 @@ function Login() {
                         />
                     </Form.Item>
                     <div className="flex justify-end">
-                        <button className='px-4 py-2 text-tertiary font-bold hover:shadow-none border-2 border-tertiary shadow-lg rounded'>Login</button>
+                        <button className='px-4 py-2 text-tertiary font-bold hover:shadow-none border-2 border-tertiary shadow-lg rounded' type='submit'>Login</button>
                     </div>
                 </Form>
             </div>

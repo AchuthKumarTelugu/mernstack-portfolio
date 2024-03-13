@@ -78,7 +78,7 @@ const handleDelete = async(value) => {
       <div className="flex justify-end ml-3 my-2">
         <button className="bg-primary text-white px-4 py-2"
           onClick={()=>{
-            formRef.current.setFieldsValue({})
+            formRef.current.resetFields()
             handleOpenModal(null)}}
         >Add Projects</button>
       </div>

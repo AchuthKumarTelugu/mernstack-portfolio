@@ -94,7 +94,7 @@ i problem i faced is whatever the card i clicked the data in popup is same ,beco
 we are writing a logic for reloading data,similarly for loading ,making useEffect,inside which on reloadingData true it should do getPortofolioData,also after fetching data,we will ReloadData(false),after making any add or delete operations we will ReloadData(true)
 creating post request for update exp and delete exp and added delete functionality
 
-problem:data in form is not updated ,whenever i click other card due to intialValues property,thats why we use setFieldsValue() for form that has useRef
+problem:data in form is not updated ,whenever i click other card due to intialValues property,thats why we use setFieldsValue() for form that has useRef,resetFields() will remove all data
 completed similarly for projects and about
 
-creating login form to acess admin panel
+creating login form to acess admin panel and username:achuthkumar.telugu123@gmail.com,password:achuth@admin and made requests for creating login and testing login details based on result if success ,it will send message,token and it is stored in frontend,so when user goes to admin it first checks jwt token if not present it is redirect to admin-login panel

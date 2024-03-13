@@ -1,5 +1,6 @@
 const Router = require('express').Router()
 const bcrypt=require('bcrypt')
+const jwt=require( 'jsonwebtoken' )
 const { Intros, About, Experience, Projects, Contact, LoginDetails } = require('../modals/portfolioModal')
 
 // get all portfolio data
@@ -126,15 +127,24 @@ Router.post('/delete-projects', async (req, res) => {
 Router.post('/login', async (req, res) => {
   try {
     const {username,password}=req.body
+    console.log(username,password)
     let login = await LoginDetails.findOne({username:username})
-    if (login) {
+    if(!login) {
+      return res.send({message:"user not found in database",success:false})
+    }
+      console.log(login)
       if (await bcrypt.compare(password,login.password)) {
-        res.send({ sucess: true, data: login,message:"login successfull" })
+        const payload={
+          username,
+          type:'admin'
+        }
+        const token=jwt.sign(payload,process.env.jwt_token,{expiresIn:'5h'})
+        return res.send({ success: true, message:"login successfull",token })
       }
       else{
-        res.send({ success: false, message: "enter valid credentials" })
+        return res.send({ success: false, message: "enter valid credentials" })
       }
-    }
+   
     
   }
   catch (error) {
