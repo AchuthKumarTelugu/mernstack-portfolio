@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Form, Modal,message } from 'antd'
 import axios from 'axios'
 import { HideLoading, ReloadData, ShowLoading } from '../redux/rootSlice'
 function AdminExperience() {
+  const formRef= useRef(null)
   const { portfolioData } = useSelector(state => state.root)
   const { experiences } = portfolioData
   const dispatch = useDispatch()
@@ -16,8 +17,12 @@ function AdminExperience() {
     }
   }
   const handleOpenModal = (value) => {
+    
     setSelectedItemForEdit(value)
     setShowModal(true)
+    if(formRef.current) {
+      formRef.current.setFieldsValue(value)
+    }
     console.log('data in modal',value)
   }
   const onFinish = async(values) => {
@@ -98,7 +103,7 @@ const handleDelete = async(value) => {
           setSelectedItemForEdit(null)
         }}
       >
-        <Form layout='vertical' onFinish={onFinish} initialValues={selectedItemForEdit} >
+        <Form layout='vertical' onFinish={onFinish} ref={formRef}  >
           <Form.Item name='period' label='period'>
             <input placeholder='period' />
           </Form.Item>
