@@ -8,6 +8,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { HideLoading, ReloadData, ShowLoading, setPortfolioData } from './redux/rootSlice'
 import Admin from './admin'
+import Login from './admin/Login'
 function App() {
   const { loading, portfolioData,reloadData } = useSelector(state => state.root)
   const dispatch = useDispatch()
@@ -41,6 +42,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/admin' element={(<Admin />)} />
+        <Route path='/admin-login' element={(<Login/>)} />
       </Routes>
     </div>
   )

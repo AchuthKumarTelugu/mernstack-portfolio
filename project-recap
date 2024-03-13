@@ -95,3 +95,6 @@ we are writing a logic for reloading data,similarly for loading ,making useEffec
 creating post request for update exp and delete exp and added delete functionality
 
 problem:data in form is not updated ,whenever i click other card due to intialValues property,thats why we use setFieldsValue() for form that has useRef
+completed similarly for projects and about
+
+creating login form to acess admin panel

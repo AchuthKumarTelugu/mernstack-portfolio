@@ -70,7 +70,7 @@ const projectsSchema = new Schema({
     },
     image: {
         type: String,
-        required: true,
+        
     },
     
     description: {
@@ -109,10 +109,21 @@ const contactSchema=new Schema ({
         required:true,
     },
 })
+const logindetails=new Schema({
+    username:{
+        type:String,
+        required:true,
+    },
+    password:{
+        type:String,
+        required:true,
+    }
+})
 module.exports={
     Intros:model('intros',introSchema),
     About:model('abouts',aboutSchema),
     Experience:model('experiences',experiencesSchema),
     Projects:model('projects',projectsSchema),
-    Contact:model('contacts',contactSchema)
+    Contact:model('contacts',contactSchema),
+    LoginDetails:model('loginDetails',logindetails)
 }
