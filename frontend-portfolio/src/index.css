@@ -92,6 +92,7 @@ textarea{
  padding-left:1rem !important;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

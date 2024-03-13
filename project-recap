@@ -86,4 +86,10 @@ similarly done the same thing for about
 
 designing experiences tab by retireving data and creating modal using <Modal/>
 Modal-> visible=true : shows modal,title=titleData :gives title,footer={null} removes bydefault ok,cancel buttons,made the logic so that on clicking edit or add it shows popup and on clicking cancel it will close ,based on selectedItemForEdit data will be edited or added
-made add request(post) for adding data in mongodb using new Experience(data) and exp.save() and send success message 
+made add request(post) for adding data in mongodb using new Experience(data) and exp.save() and send success message
+logic for add exp and edit exp :whenver clicked ,go to open modal ,where it has value as arg,for add exp it is null,for edit it is value,in function we set that recieved value as selectedItemForEdit and setShowModal as true 
+
+i problem i faced is whatever the card i clicked the data in popup is same ,becoz all data shares same state,to get seperate state for each ones,here is the approach
+
+we are writing a logic for reloading data,similarly for loading ,making useEffect,inside which on reloadingData true it should do getPortofolioData,also after fetching data,we will ReloadData(false),after making any add or delete operations we will ReloadData(true)
+creating post request for update exp and delete exp

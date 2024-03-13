@@ -57,4 +57,23 @@ Router.post('/add-experiences',async(req,res)=>{
     res.status(500).send({success:false,message:error.message})
    }
 })
+//update the experience
+Router.post('/update-experiences',async(req,res)=>{
+  try {
+    const experience=await Experience.findOneAndUpdate({_id:req.body._id},req.body,{new:true})
+    res.send({success:true,message:"experiences updated successfully",data:experience})
+  } catch (error) {
+    console.log(error)
+    res.send({success:false,message:error.message})
+  }
+})
+//delete the experience
+Router.delete('/delete-experience',async(req,res)=>{
+  try {
+    const result=await Experience.findOneAndDelete({_id:req.body.id});
+    res.send({success:true,data:result,message:'Deleted Successfully'})
+  } catch (error) {
+    console.log(error)
+  }
+})
 module.exports = Router;

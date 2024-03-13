@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Form, Modal,message } from 'antd'
 import axios from 'axios'
-import { HideLoading, ShowLoading } from '../redux/rootSlice'
+import { HideLoading, ReloadData, ShowLoading } from '../redux/rootSlice'
 function AdminExperience() {
   const { portfolioData } = useSelector(state => state.root)
   const { experiences } = portfolioData
@@ -13,18 +13,29 @@ function AdminExperience() {
     setShowModal(false)
     setSelectedItemForEdit(null)
   }
-  const handleOpenModal = () => {
+  const handleOpenModal = (value) => {
+    setSelectedItemForEdit(value)
     setShowModal(true)
+    console.log('data in modal',value)
   }
   const onFinish = async(values) => {
     console.log('entered onFinish', values)
     try {
       dispatch(ShowLoading())
-      const response=await axios.post('http://localhost:3000/api/portfolio/add-experiences',values)
+      let response;
+      if(selectedItemForEdit){
+        response=await axios.post('http://localhost:3000/api/portfolio/update-experiences',{
+          _id: selectedItemForEdit._id ,
+          ...values
+        })
+      }else{
+       response=await axios.post('http://localhost:3000/api/portfolio/add-experiences',values)
+      }
       dispatch(HideLoading())
       const data=response.data
       if(data.success) {
         message.success(data.message)
+        dispatch(ReloadData(true))
       }else{
         message.error('error occured')
       }
@@ -34,15 +45,26 @@ function AdminExperience() {
     }
     handleCancel()
   }
+const handleDelete = async(id) => {
+  try {
+    const res=await axios.get('http://localhost:3000/api/portfolio/delete-experiences')
+    const data=res.data
+    if(data.success) {
+      message.success(data.message)
+      dispatch(ReloadData(true))
+    }else{
+      message.error(data.message)
+    }
+  } catch (error) {
+    console.log(error.message)
+  }
+}
 
   return (
     <div>
       <div className="flex justify-end ml-3 my-2">
         <button className="bg-primary text-white px-4 py-2"
-          onClick={() => {
-            handleOpenModal()
-            setSelectedItemForEdit(null)
-          }}
+          onClick={()=>handleOpenModal(null)}
         >Add Experience</button>
       </div>
       <div className='grid grid-cols-4'>
@@ -56,12 +78,9 @@ function AdminExperience() {
               <p>{value.description}</p>
               <div className="flex justify-end mt-5">
                 <button className='bg-primary text-white px-5 py-3 mx-2'
-                  onClick={() => {
-                    setShowModal(true)
-                    console.log('clicked edit')
-                  }}
+                  onClick={()=>handleOpenModal(value)}
                 >Edit</button>
-                <button className='bg-red-600 text-white px-5 py-3 mx-2'>delete</button>
+                <button className='bg-red-600 text-white px-5 py-3 mx-2' onClick={()=>handleDelete(value._id)}>delete</button>
               </div>
             </div>
           ))
@@ -72,7 +91,7 @@ function AdminExperience() {
         title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
         footer={null} onCancel={handleCancel}
       >
-        <Form layout='vertical' onFinish={onFinish} >
+        <Form layout='vertical' onFinish={onFinish} initialValues={selectedItemForEdit} >
           <Form.Item name='period' label='period'>
             <input placeholder='period' />
           </Form.Item>
