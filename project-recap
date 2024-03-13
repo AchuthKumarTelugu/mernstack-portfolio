@@ -92,4 +92,4 @@ logic for add exp and edit exp :whenver clicked ,go to open modal ,where it has 
 i problem i faced is whatever the card i clicked the data in popup is same ,becoz all data shares same state,to get seperate state for each ones,here is the approach
 
 we are writing a logic for reloading data,similarly for loading ,making useEffect,inside which on reloadingData true it should do getPortofolioData,also after fetching data,we will ReloadData(false),after making any add or delete operations we will ReloadData(true)
-creating post request for update exp and delete exp
+creating post request for update exp and delete exp and added delete functionality

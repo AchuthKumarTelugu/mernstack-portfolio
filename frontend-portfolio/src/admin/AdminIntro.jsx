@@ -12,7 +12,7 @@ function AdminIntro() {
   const dispatch = useDispatch()
   const onFinish = async (values) => {
     values = { _id: intros._id, ...values }
-    console.log('onFinish called', values)
+    // console.log('onFinish called', values)
     dispatch(ShowLoading())
     const response = await axios.post('http://localhost:3000/api/portfolio/update-intros', values)
     const data=response.data

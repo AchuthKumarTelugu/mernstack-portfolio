@@ -11,7 +11,9 @@ function AdminExperience() {
   const [selectedItemForEdit, setSelectedItemForEdit] = useState(null)
   const handleCancel = () => {
     setShowModal(false)
+    if(!selectedItemForEdit) {
     setSelectedItemForEdit(null)
+    }
   }
   const handleOpenModal = (value) => {
     setSelectedItemForEdit(value)
@@ -36,6 +38,7 @@ function AdminExperience() {
       if(data.success) {
         message.success(data.message)
         dispatch(ReloadData(true))
+        setSelectedItemForEdit(null)
       }else{
         message.error('error occured')
       }
@@ -45,11 +48,12 @@ function AdminExperience() {
     }
     handleCancel()
   }
-const handleDelete = async(id) => {
+const handleDelete = async(value) => {
   try {
-    const res=await axios.get('http://localhost:3000/api/portfolio/delete-experiences')
+    const res=await axios.post('http://localhost:3000/api/portfolio/delete-experience',value)
     const data=res.data
     if(data.success) {
+      console.log('deleted data',data)
       message.success(data.message)
       dispatch(ReloadData(true))
     }else{
@@ -80,7 +84,7 @@ const handleDelete = async(id) => {
                 <button className='bg-primary text-white px-5 py-3 mx-2'
                   onClick={()=>handleOpenModal(value)}
                 >Edit</button>
-                <button className='bg-red-600 text-white px-5 py-3 mx-2' onClick={()=>handleDelete(value._id)}>delete</button>
+                <button className='bg-red-600 text-white px-5 py-3 mx-2' onClick={()=>handleDelete(value)}>delete</button>
               </div>
             </div>
           ))
@@ -89,7 +93,10 @@ const handleDelete = async(id) => {
       <Modal
         open={showModal}
         title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
-        footer={null} onCancel={handleCancel}
+        footer={null} onCancel={()=>{
+          handleCancel()
+          setSelectedItemForEdit(null)
+        }}
       >
         <Form layout='vertical' onFinish={onFinish} initialValues={selectedItemForEdit} >
           <Form.Item name='period' label='period'>

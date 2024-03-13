@@ -68,9 +68,9 @@ Router.post('/update-experiences',async(req,res)=>{
   }
 })
 //delete the experience
-Router.delete('/delete-experience',async(req,res)=>{
+Router.post('/delete-experience',async(req,res)=>{
   try {
-    const result=await Experience.findOneAndDelete({_id:req.body.id});
+    const result=await Experience.findByIdAndDelete(req.body._id)
     res.send({success:true,data:result,message:'Deleted Successfully'})
   } catch (error) {
     console.log(error)
