@@ -129,3 +129,6 @@ install concurrently package and run npm run build on frontend to create dist fo
     "npm":"9.5.1"
   } in package.json
 
+  deploying:
+  frontend:add filenamed _redirects -> /* /index.html 200 and build the project and deploy dist folder in netlify
+

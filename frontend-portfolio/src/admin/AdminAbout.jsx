@@ -15,6 +15,7 @@ function AdminAbout() {
     console.log('onFinish called', values)
     dispatch(ShowLoading())
     const response = await axios.post('http://localhost:3000/api/portfolio/update-abouts', values)
+    // const response = await axios.post('https://portfolio-backend-3-vdt8.onrender.com/api/portfolio/update-abouts', values)
     const data=response.data
     dispatch(HideLoading())
     if (data.success) {
