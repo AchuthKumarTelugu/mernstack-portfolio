@@ -143,4 +143,5 @@ install concurrently package and run npm run build on frontend to create dist fo
         {"src":"/(.*)","dest":"/server.js"}
     ]
 }
+deployed on netlify,vercel,render successfully
 
