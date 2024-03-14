@@ -98,3 +98,17 @@ problem:data in form is not updated ,whenever i click other card due to intialVa
 completed similarly for projects and about
 
 creating login form to acess admin panel and username:achuthkumar.telugu123@gmail.com,password:achuth@admin and made requests for creating login and testing login details based on result if success ,it will send message,token and it is stored in frontend,so when user goes to admin it first checks jwt token if not present it is redirect to admin-login panel
+
+hosting backend data on render,dashboard->plus->webservices
+
+github file link for mentors:https://github.com/sathyaprakash195 ->repositaries->mern-portofolio-udemy
+now to deploy this project on "heroku" which host out websites ,we need to write a configuration 
+import path module path=require('path')
+//checking if deployment running environment is production
+if(process.env.NODE_ENV === "production") 
+{    //give frontend-path name
+    app.use(express.static(path.join(__dirname, "../frontend-portfolio/build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../frontend-portfolio/build/index.html"));
+    } );
+}
