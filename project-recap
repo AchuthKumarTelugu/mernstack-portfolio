@@ -132,3 +132,15 @@ install concurrently package and run npm run build on frontend to create dist fo
   deploying:
   frontend:add filenamed _redirects -> /* /index.html 200 and build the project and deploy dist folder in netlify
 
+  if you want deploy backend on render ,deploy->webservies   
+  if it is on vercel,create vercel.json which includes 
+  {
+    "name":"portfolio-backend", //name
+    "builds":[
+        {"src":"server.js" , "use":"@vercel/node"} //server.js is main file name
+    ],
+    "routes":[
+        {"src":"/(.*)","dest":"/server.js"}
+    ]
+}
+
