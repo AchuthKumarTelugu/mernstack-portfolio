@@ -112,3 +112,20 @@ if(process.env.NODE_ENV === "production")
         res.sendFile(path.join(__dirname, "../frontend-portfolio/build/index.html"));
     } );
 }
+
+copy this stuff
+"scripts": {
+    "client-install": "npm install --prefix frontend-portfolio",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  }
+
+install concurrently package and run npm run build on frontend to create dist folder,the above heroku script is specific to heroku
+"engines": {
+    "node": "v18.16.0",
+    "npm":"9.5.1"
+  } in package.json
+
